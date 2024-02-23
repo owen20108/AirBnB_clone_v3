@@ -1,0 +1,28 @@
+/usr/local/lib/python3.8/dist-packages/pep8.py:110: FutureWarning: Possible nested set at position 1
+  EXTRANEOUS_WHITESPACE_REGEX = re.compile(r'[[({] | []}),;:]')
+..............F..........................ssss..E............................................................
+======================================================================
+ERROR: test_save (test_models.test_engine.test_file_storage.TestFileStorage)
+Test that save properly saves objects to file.json
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/AirBnB_clone_v3/tests/test_models/test_engine/test_file_storage.py", line 108, in test_save
+    storage.save()
+  File "/root/AirBnB_clone_v3/models/engine/file_storage.py", line 47, in save
+    json_objects[key] = self.__objects[key].to_dict(False)
+TypeError: to_dict() takes 1 positional argument but 2 were given
+
+======================================================================
+FAIL: test_datetime_attributes (test_models.test_base_model.TestBaseModel)
+Test that two BaseModel instances have different datetime objects
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/AirBnB_clone_v3/tests/test_models/test_base_model.py", line 88, in test_datetime_attributes
+    self.assertTrue(tic <= inst1.created_at <= toc)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 108 tests in 2.397s
+
+FAILED (failures=1, errors=1, skipped=4)
+{'id': 'f358bb23-57de-41ea-b4b9-11b98cdf2e4c', 'created_at': datetime.datetime(2024, 2, 23, 17, 28, 10, 566595), 'updated_at': datetime.datetime(2024, 2, 23, 17, 28, 10, 566595)}
